@@ -6,22 +6,24 @@
 #    By: user <user@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/29 14:37:32 by user              #+#    #+#              #
-#    Updated: 2024/07/29 15:13:03 by user             ###   ########.fr        #
+#    Updated: 2024/07/29 17:16:33 by user             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = megaphone
 
-CC = c++
+CXX = c++
 
-CFLAGS = -Werror -Wall -Wextra -std=c++11
+CXXFLAGS = -Werror -Wall -Wextra -std=c++11
 
 SRCS = megaphone.cpp
 
-OBJS = $(SRCS:.cpp=.o)
+OBJS =	$(SRCS:.cpp=.o)
 
-$(NAME):		$(OBJS)
-	$(CC)		$(CFLAGS) $(OBJS) -o $(NAME)
+all: $(NAME)
+
+$(NAME):$(OBJS)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	@rm -f		$(OBJS)
