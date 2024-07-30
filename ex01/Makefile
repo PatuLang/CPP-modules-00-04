@@ -6,7 +6,7 @@
 #    By: user <user@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/29 14:37:32 by user              #+#    #+#              #
-#    Updated: 2024/07/29 17:58:59 by user             ###   ########.fr        #
+#    Updated: 2024/07/30 17:21:59 by user             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CXX = c++
 
 CXXFLAGS = -Werror -Wall -Wextra
 
-SRCS = phonebook.cpp
+SRCS = phonebook.cpp, contact.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
