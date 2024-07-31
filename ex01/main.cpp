@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 14:38:37 by user              #+#    #+#             */
-/*   Updated: 2024/07/30 18:36:48 by user             ###   ########.fr       */
+/*   Updated: 2024/07/31 16:39:29 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,24 @@ int main(void)
         {
             std::cout << "Choose one: ADD, SEARCH, EXIT >";
             std::getline(std::cin, line);
-            if (line == "ADD")
+            if (std::cin.eof())
+            {
+                std::cout << std::endl;
+                throw std::runtime_error("Sending you back to the 2020s");
+            }
+            else if (line == "ADD")
                 pbook.adding_contact();
-            if (line == "SEARCH")
+            else if (line == "SEARCH")
                 pbook.searching_contact();
-            // throw std::runtime_error("Error");
+            else if (line == "EXIT")
+            {
+                std::cout << "Sending you back to the 2020s" << std::endl;
+                break ;
+            }
         }
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e.what() << std::endl;
     }
 }
-
-
-// geeks for geeks cout. options, ccpreference, Case spesific file names according to classes

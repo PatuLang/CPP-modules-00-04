@@ -6,7 +6,7 @@
 #    By: user <user@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/29 14:37:32 by user              #+#    #+#              #
-#    Updated: 2024/07/30 17:21:59 by user             ###   ########.fr        #
+#    Updated: 2024/07/31 16:52:30 by user             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,13 +16,15 @@ CXX = c++
 
 CXXFLAGS = -Werror -Wall -Wextra
 
-SRCS = phonebook.cpp, contact.cpp
+SRCS = phonebook.cpp \
+		contact.cpp \
+		main.cpp
 
-OBJS = $(SRCS:.cpp=.o)
+OBJS =	$(SRCS:.cpp=.o)
 
 all:			$(NAME)
 
-$(NAME):		$(OBJS)
+$(NAME): 		$(OBJS)
 	$(CXX)		$(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean:
