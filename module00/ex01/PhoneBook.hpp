@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 10:36:25 by user              #+#    #+#             */
-/*   Updated: 2024/07/31 16:53:31 by user             ###   ########.fr       */
+/*   Updated: 2024/07/31 18:39:22 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <iostream>
 # include <iomanip>
 # include <string>
-# include "contact.hpp"
+# include "Contact.hpp"
 
 # define MAX_CONTACT 8
 
