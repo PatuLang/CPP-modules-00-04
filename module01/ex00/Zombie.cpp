@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/30 10:36:25 by user              #+#    #+#             */
-/*   Updated: 2024/07/31 16:53:31 by user             ###   ########.fr       */
+/*   Created: 2024/07/31 18:03:54 by user              #+#    #+#             */
+/*   Updated: 2024/07/31 18:20:23 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include "Zombie.hpp"
 
-# include <iostream>
-# include <iomanip>
-# include <string>
-# include "contact.hpp"
-
-# define MAX_CONTACT 8
-
-class PhoneBook
+void    Zombie::announce(void)
 {
-private:
-	Contact contacts[MAX_CONTACT];
-public:
-	void		adding_contact();
-	void		searching_contact();
-	void		print_PhoneBook();
-	std::string	truncate(std::string, size_t size);
-};
+    std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
 
-#endif
+void    Zombie::set_zombie_name(std::string zombieName)
+{
+    this->name = zombieName;
+}
+
+std::string Zombie::get_zombie_name(void)
+{
+    return name;
+}
