@@ -6,9 +6,14 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 18:34:38 by user              #+#    #+#             */
-/*   Updated: 2024/07/31 18:34:48 by user             ###   ########.fr       */
+/*   Updated: 2024/08/01 13:11:06 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
+void    randomChump(std::string name)
+{
+    Zombie myZombie(name);
+    myZombie.announce();
+}
