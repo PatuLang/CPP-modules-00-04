@@ -6,7 +6,7 @@
 #    By: plang <plang@student.hive.fi>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/05 14:23:53 by plang             #+#    #+#              #
-#    Updated: 2024/08/05 14:23:55 by plang            ###   ########.fr        #
+#    Updated: 2024/08/06 11:28:01 by plang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CXX = c++
 
 CXXFLAGS = -Werror -Wall -Wextra
 
-SRCS = megaphone.cpp
+SRCS = Megaphone.cpp
 
 OBJS =	$(SRCS:.cpp=.o)
 
