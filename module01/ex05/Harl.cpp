@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 12:01:09 by plang             #+#    #+#             */
-/*   Updated: 2024/08/28 17:14:33 by plang            ###   ########.fr       */
+/*   Updated: 2024/08/28 17:19:24 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	Harl::complain(std::string level)
 Harl::Harl()
 {
 	compl_func["debug"] = &debug;
-	compl_func["info"] = Harl::info;
+	compl_func["info"] = info;
 	compl_func["warning"] = Harl::warning;
 	compl_func["error"] = Harl::error;
 }
