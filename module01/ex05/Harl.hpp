@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 12:01:22 by plang             #+#    #+#             */
-/*   Updated: 2024/08/28 17:08:52 by plang            ###   ########.fr       */
+/*   Updated: 2024/08/29 15:39:19 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 #include <string>
 #include <iostream>
-#include <map>
 
 class Harl
 {
@@ -29,7 +28,6 @@ public:
 	Harl();
 	~Harl();
 	void complain(std::string level);
-	std::map<std::string, void (Harl::*)(void)> compl_func;
 };
 
 #endif
