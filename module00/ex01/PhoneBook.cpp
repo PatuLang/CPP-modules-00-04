@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 14:24:41 by plang             #+#    #+#             */
-/*   Updated: 2024/08/05 14:24:43 by plang            ###   ########.fr       */
+/*   Updated: 2024/08/29 14:59:05 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,7 +134,7 @@ std::string PhoneBook::truncate(std::string string, size_t size)
 {
     std::string newstr;
 
-    if (std::size(string) > size)
+    if (string.size() > size)
     {
         newstr = string.substr(0, 9) + ".";
         return newstr;

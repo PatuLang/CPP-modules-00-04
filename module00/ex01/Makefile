@@ -6,18 +6,18 @@
 #    By: plang <plang@student.hive.fi>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/05 14:24:31 by plang             #+#    #+#              #
-#    Updated: 2024/08/05 14:24:32 by plang            ###   ########.fr        #
+#    Updated: 2024/08/29 15:00:14 by plang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = PhoneBook
 
 CXX = c++
 
 CXXFLAGS = -Werror -Wall -Wextra
 
-SRCS = phonebook.cpp \
-		contact.cpp \
+SRCS = PhoneBook.cpp \
+		Contact.cpp \
 		main.cpp
 
 OBJS =	$(SRCS:.cpp=.o)
