@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 12:01:09 by plang             #+#    #+#             */
-/*   Updated: 2024/08/28 17:19:24 by plang            ###   ########.fr       */
+/*   Updated: 2024/08/29 14:49:09 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	Harl::debug(void)
 void	Harl::info(void)
 {
 	std::cout << "INFO" << std::endl;
-	std::cout << "Info on the spider can be found on the web" << std::endl;
+	std::cout << "Info on the spider can be found on the web!" << std::endl;
 }
 
 void	Harl::warning(void)
@@ -33,20 +33,23 @@ void	Harl::warning(void)
 void	Harl::error(void)
 {
 	std::cout << "ERROR" << std::endl;
-	std::cout << "Sorry for the previous messages, there was an error in the system" << std::endl;
+	std::cout << "Sorry for the previous messages, there was an error in the system!" << std::endl;
 }
 
 void	Harl::complain(std::string level)
 {
-	compl_func[level];
+	typedef void (Harl::*func_ptr)(void);
+	std::string _complaints[4] = {{"debug"}, {"info"}, {"warning"}, {"error"}};
+	func_ptr array[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	for (int i = 0; i < 4; i++)
+	{
+		if (level == _complaints[i])
+			(this->*array[i])();
+	}
 }
 
 Harl::Harl()
 {
-	compl_func["debug"] = &debug;
-	compl_func["info"] = info;
-	compl_func["warning"] = Harl::warning;
-	compl_func["error"] = Harl::error;
 }
 
 Harl::~Harl()
