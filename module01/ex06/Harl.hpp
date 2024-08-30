@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 17:29:42 by plang             #+#    #+#             */
-/*   Updated: 2024/08/29 17:35:28 by plang            ###   ########.fr       */
+/*   Updated: 2024/08/30 12:55:18 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <string>
 # include <iostream>
+# include <csignal>
 
 class Harl
 {
