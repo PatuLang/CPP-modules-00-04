@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 14:24:21 by plang             #+#    #+#             */
-/*   Updated: 2024/08/05 14:24:23 by plang            ###   ########.fr       */
+/*   Updated: 2024/08/30 17:03:46 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int main(void)
     {
         while (1)
         {
+            signal(SIGQUIT, SIG_IGN);
             std::cout << "Choose one: ADD, SEARCH, EXIT >";
             std::getline(std::cin, line);
             if (std::cin.eof())
