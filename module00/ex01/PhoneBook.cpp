@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 14:24:41 by plang             #+#    #+#             */
-/*   Updated: 2024/08/30 17:02:57 by plang            ###   ########.fr       */
+/*   Updated: 2024/08/30 17:21:15 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void    PhoneBook::adding_contact()
     static int  success = 0;
     int         i;
 
-    if (success > 7)
+    if (success > MAX_CONTACT - 1)
         i = success % MAX_CONTACT;
     else
         i = success;
@@ -120,7 +120,7 @@ void    PhoneBook::print_PhoneBook()
             if (line == "BACK")
                 break ;
             i = std::stoi(line);
-            if (i > 8 || i < 1)
+            if (i > MAX_CONTACT || i < 1)
                 std::cout << "The PhoneBook only has 8 slots" << std::endl;
             else if (this->contacts[i - 1].get_first_name().empty())
                 std::cout << "That contact doesn't exsist" << std::endl;
