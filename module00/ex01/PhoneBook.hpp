@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 14:24:48 by plang             #+#    #+#             */
-/*   Updated: 2024/08/05 14:24:50 by plang            ###   ########.fr       */
+/*   Updated: 2024/08/30 17:03:25 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <iostream>
 # include <iomanip>
 # include <string>
+# include <csignal>
 # include "Contact.hpp"
 
 # define MAX_CONTACT 8

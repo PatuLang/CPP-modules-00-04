@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 14:24:41 by plang             #+#    #+#             */
-/*   Updated: 2024/08/29 14:59:05 by plang            ###   ########.fr       */
+/*   Updated: 2024/08/30 17:02:57 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void    PhoneBook::adding_contact()
         i = success % MAX_CONTACT;
     else
         i = success;
+    this->contacts[i].set_first_name("");
     while (this->contacts[i].get_first_name().empty())
     {
         std::cout << "First name: ";
@@ -33,6 +34,7 @@ void    PhoneBook::adding_contact()
             throw std::runtime_error("Sending you back to the 2020s");
         }
     }
+    this->contacts[i].set_last_name("");
     while (this->contacts[i].get_last_name().empty())
     {
         std::cout << "Last name: ";
@@ -44,6 +46,7 @@ void    PhoneBook::adding_contact()
             throw std::runtime_error("Sending you back to the 2020s");
         }
     }
+    this->contacts[i].set_nickname("");
     while (this->contacts[i].get_nickname().empty())
     {
         std::cout << "Nickname: ";
@@ -55,6 +58,7 @@ void    PhoneBook::adding_contact()
             throw std::runtime_error("Sending you back to the 2020s");
         }
     }
+    this->contacts[i].set_darkest_secret("");
     while (this->contacts[i].get_darkest_secret().empty())
     {
         std::cout << "Darkest secret: ";
@@ -66,6 +70,7 @@ void    PhoneBook::adding_contact()
             throw std::runtime_error("Sending you back to the 2020s");
         }
     }
+    this->contacts[i].set_phone_number("");
     while (this->contacts[i].get_phone_number().empty())
     {
         std::cout << "Phone number: ";
