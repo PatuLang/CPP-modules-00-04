@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 15:05:26 by plang             #+#    #+#             */
-/*   Updated: 2024/08/29 16:30:59 by plang            ###   ########.fr       */
+/*   Updated: 2024/08/30 12:57:42 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	main(void)
 	{
 		while (1)
 		{
+			signal(SIGQUIT, SIG_IGN);
 			std::cout << "Choose one: debug, info, warning, error > ";
             std::getline(std::cin, level);
             if (std::cin.eof())
