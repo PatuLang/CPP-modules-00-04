@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 14:26:32 by plang             #+#    #+#             */
-/*   Updated: 2024/08/05 14:26:34 by plang            ###   ########.fr       */
+/*   Updated: 2024/09/02 17:47:44 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,5 @@ Zombie::Zombie()
 
 Zombie::~Zombie()
 {
+    std::cout <<  "Zombie destroyed! (" << this->name << ")" << std::endl;
 }
