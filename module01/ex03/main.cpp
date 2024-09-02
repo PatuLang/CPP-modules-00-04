@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 14:27:38 by plang             #+#    #+#             */
-/*   Updated: 2024/09/02 11:15:45 by plang            ###   ########.fr       */
+/*   Updated: 2024/09/02 18:09:59 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int main()
     {
         Weapon club = Weapon("Golf club");
         HumanB jim("Jim");
+        jim.attack();
         jim.setWeapon(club);
         jim.attack();
         club.setType("Baseball bat");
