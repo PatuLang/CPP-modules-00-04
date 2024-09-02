@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 14:28:08 by plang             #+#    #+#             */
-/*   Updated: 2024/08/05 14:28:09 by plang            ###   ########.fr       */
+/*   Updated: 2024/09/02 11:16:29 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <iostream>
 #include <string>
 
-int main(int argc, char **argv)// argc argv
+int main(int argc, char **argv)
 {
     if (argc == 4)
     {

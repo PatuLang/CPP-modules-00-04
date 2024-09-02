@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 14:27:38 by plang             #+#    #+#             */
-/*   Updated: 2024/08/05 14:27:40 by plang            ###   ########.fr       */
+/*   Updated: 2024/09/02 11:15:45 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,18 @@
 int main()
 {
     {
-        Weapon club = Weapon("crude spiked club");
+        Weapon club = Weapon("Stone sword");
         HumanA bob("Bob", club);
         bob.attack();
-        club.setType("some other type of club");
+        club.setType("Wooden stick");
         bob.attack();
     }
     {
-        Weapon club = Weapon("crude spiked club");
+        Weapon club = Weapon("Golf club");
         HumanB jim("Jim");
         jim.setWeapon(club);
         jim.attack();
-        club.setType("some other type of club");
+        club.setType("Baseball bat");
         jim.attack();
     }
     return 0;
