@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 14:28:08 by plang             #+#    #+#             */
-/*   Updated: 2024/09/04 10:24:20 by plang            ###   ########.fr       */
+/*   Updated: 2024/09/04 11:16:50 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main(int argc, char **argv)
         try
         {
             std::string s1 = argv[2];
-            std::string s2 = argv[3];
+            std::string s2 = argv[3]; 
             if (s1.empty() || s2.empty())
             {
                 std::cerr << "Empty arguments are not ok" << std::endl;
