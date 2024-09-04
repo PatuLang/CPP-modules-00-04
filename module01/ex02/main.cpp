@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 14:26:56 by plang             #+#    #+#             */
-/*   Updated: 2024/08/05 14:26:58 by plang            ###   ########.fr       */
+/*   Updated: 2024/09/03 17:36:36 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main(void)
     std::string &stringREF = brain;
 
     std::cout << "The memory address of the string variable: " << &brain << std::endl;
-    std::cout << "The memory address held by stringPTR: " << &stringPTR << std::endl;
+    std::cout << "The memory address held by stringPTR: " << stringPTR << std::endl;
     std::cout << "The memory address held by stringREF: " << &stringREF << std::endl;
 
     std::cout << "The value of the string variable: " << brain << std::endl;
