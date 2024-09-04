@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 14:28:08 by plang             #+#    #+#             */
-/*   Updated: 2024/09/02 11:16:29 by plang            ###   ########.fr       */
+/*   Updated: 2024/09/04 10:24:20 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,13 @@ int main(int argc, char **argv)
         {
             std::string s1 = argv[2];
             std::string s2 = argv[3];
+            if (s1.empty() || s2.empty())
+            {
+                std::cerr << "Empty arguments are not ok" << std::endl;
+                return 1;
+            }
             std::string out = argv[1];
-            std::string add = ".replace";
-            std::string repFile = out + add;
             std::ifstream inFile(argv[1]);
-            std::ofstream outFile(repFile);
-            
             if (!inFile)
             {
                 std::cerr << "Could not open file" << std::endl;
@@ -38,6 +39,11 @@ int main(int argc, char **argv)
             std::string input;
             checkLine << inFile.rdbuf();
             input = checkLine.str();
+            if (input.empty())
+            {
+                std::cerr << "File has no content" << std::endl;
+                return 1;
+            }
             size_t  pos = 0;
             while (pos < std::string::npos)
             {
@@ -48,6 +54,8 @@ int main(int argc, char **argv)
                 input.insert(pos, s2);
                 pos += s2.size();
             }
+            std::string repFile = out + ".replace";
+            std::ofstream outFile(repFile);
             outFile << input << std::endl;
         }
         catch(const std::exception& e)
