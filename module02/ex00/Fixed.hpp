@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 12:19:31 by plang             #+#    #+#             */
-/*   Updated: 2024/09/06 13:28:47 by plang            ###   ########.fr       */
+/*   Updated: 2024/09/17 17:58:09 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,18 @@
 
 class Fixed
 {
-private:
-	int					_fixed;
-	static const	int	fractional_bits = 8;
-public:
-	Fixed();
-	~Fixed();
+	private:
+		int					_fixed;
+		static const	int	fractional_bits = 8;
 
-	int		getRawBits(void) const;
-	void	setRawBits(int const raw);
+	public:
+		Fixed();
+		Fixed(const Fixed&);
+		Fixed& operator=(const Fixed&);
+		~Fixed();
+
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
 };
 
 #endif
