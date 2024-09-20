@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 17:41:41 by plang             #+#    #+#             */
-/*   Updated: 2024/09/20 15:51:28 by plang            ###   ########.fr       */
+/*   Updated: 2024/09/20 16:12:31 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ class Fixed
 		bool				operator==(const Fixed&) const;
 		bool				operator!=(const Fixed&) const;
 
-		Fixed				operator+(const Fixed&);
-		Fixed				operator-(const Fixed&);
-		Fixed				operator*(const Fixed&);
-		Fixed				operator/(const Fixed&);
+		Fixed				operator+(const Fixed&) const;
+		Fixed				operator-(const Fixed&) const;
+		Fixed				operator*(const Fixed&) const;
+		Fixed				operator/(const Fixed&) const;
 
 		Fixed				operator++();
 		Fixed				operator++(int);

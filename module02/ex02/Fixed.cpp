@@ -6,11 +6,13 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 17:41:45 by plang             #+#    #+#             */
-/*   Updated: 2024/09/20 16:00:13 by plang            ###   ########.fr       */
+/*   Updated: 2024/09/20 16:12:14 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+/* constructors & destructor */
 
 Fixed::Fixed() : _fixed(0)
 {
@@ -35,8 +37,7 @@ Fixed::~Fixed()
 {
 }
 
-
-
+/* copy assign operator */
 
 Fixed& Fixed::operator=(const Fixed& other)
 {
@@ -46,6 +47,8 @@ Fixed& Fixed::operator=(const Fixed& other)
 	}
 	return *this;
 }
+
+/* comparison operators */
 
 bool	Fixed::operator>(const Fixed& other) const
 {
@@ -77,7 +80,9 @@ bool	Fixed::operator!=(const Fixed& other) const
 	return this->_fixed != other._fixed;
 }
 
-Fixed	Fixed::operator+(const Fixed& other)
+/* arithmetic operators */
+
+Fixed	Fixed::operator+(const Fixed& other) const
 {
 	Fixed	result;
 
@@ -85,7 +90,7 @@ Fixed	Fixed::operator+(const Fixed& other)
 	return result;
 }
 
-Fixed	Fixed::operator-(const Fixed& other)
+Fixed	Fixed::operator-(const Fixed& other) const
 {
 	Fixed	result;
 
@@ -93,7 +98,7 @@ Fixed	Fixed::operator-(const Fixed& other)
 	return result;
 }
 
-Fixed	Fixed::operator*(const Fixed& other)
+Fixed	Fixed::operator*(const Fixed& other) const
 {
 	Fixed	result;
 
@@ -101,7 +106,7 @@ Fixed	Fixed::operator*(const Fixed& other)
 	return result;
 }
 
-Fixed	Fixed::operator/(const Fixed& other)
+Fixed	Fixed::operator/(const Fixed& other)  const
 {
 	Fixed	result;
 
@@ -109,7 +114,7 @@ Fixed	Fixed::operator/(const Fixed& other)
 	return result;
 }
 
-
+/* increment/decrement operators */
 
 Fixed	Fixed::operator++()
 {
@@ -139,7 +144,7 @@ Fixed	Fixed::operator--(int)
 	return temp;
 }
 
-
+/* min & max getters */
 
 Fixed&	Fixed::min(Fixed& one, Fixed& two)
 {
@@ -161,7 +166,7 @@ const Fixed&	Fixed::max(const Fixed& one, const Fixed& two)
 	return one > two ? one : two;
 }
 
-
+/* get & set fixed point value */
 
 int	Fixed::getRawBits(void) const
 {
@@ -173,7 +178,7 @@ void	Fixed::setRawBits(int const raw)
 	this->_fixed = raw;
 }
 
-
+/* int & float converters */
 
 int	Fixed::toInt(void) const
 {
@@ -185,7 +190,7 @@ float	Fixed::toFloat(void) const
 	return (float)(this->_fixed / (float)(1 << this->fractional_bits));
 }
 
-
+/* outputstream operator */
 
 std::ostream& operator<<(std::ostream &out, const Fixed &obj)
 {
