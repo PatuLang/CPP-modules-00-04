@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 16:13:20 by plang             #+#    #+#             */
-/*   Updated: 2024/09/23 17:03:53 by plang            ###   ########.fr       */
+/*   Updated: 2024/09/24 14:15:16 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,18 @@
 
 int	main(void)
 {
-	ClapTrap bob("bob");
+	ClapTrap 	Bob("Bobby");
+	ClapTrap	Tim("Timmy");
+	ClapTrap	Fred("Freddy");
 
-	bob.takeDamage(5);
+	std::cout << std::endl;
+
+	Fred.attack("Bobby");
+	Bob.takeDamage(5);
+	Bob.beRepaired(15);
+	Fred.attack("Timmy");
+	Tim.takeDamage(5);
+	Tim.beRepaired(15);
+
+	std::cout << std::endl;
 }
