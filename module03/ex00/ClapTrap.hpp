@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 15:24:39 by plang             #+#    #+#             */
-/*   Updated: 2024/09/23 17:02:51 by plang            ###   ########.fr       */
+/*   Updated: 2024/09/25 11:11:23 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ class ClapTrap
 {
 	private:
 		std::string		_name;
-		unsigned int	Hitp = 10;
-		unsigned int	Energyp = 10;
-		unsigned int	Attackdmg = 0;
+		unsigned int	Hitp;
+		unsigned int	Energyp;
+		unsigned int	Attackdmg;
 	public:
 		ClapTrap();
 		ClapTrap(std::string name);
