@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 15:24:39 by plang             #+#    #+#             */
-/*   Updated: 2024/09/24 14:30:52 by plang            ###   ########.fr       */
+/*   Updated: 2024/09/25 16:33:51 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@
 
 class ClapTrap
 {
-	private:
+	protected:
 		std::string		_name;
-		unsigned int	Hitp = 10;
-		unsigned int	Energyp = 10; // Messages more specific for the different classes, ClapTrap/ScavTrap in the constructors and destructors.
-		unsigned int	Attackdmg = 0; // change the constructors so that the values are set in there instead.
+		unsigned int	Hitp;
+		unsigned int	Energyp;
+		unsigned int	Attackdmg;
 	public:
 		ClapTrap();
-		ClapTrap(std::string name);
+		ClapTrap(std::string);
 		ClapTrap(const ClapTrap&);
 		ClapTrap& operator=(const ClapTrap&);
 		~ClapTrap();
