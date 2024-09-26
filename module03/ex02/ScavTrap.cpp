@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 14:22:54 by plang             #+#    #+#             */
-/*   Updated: 2024/09/25 17:53:59 by plang            ###   ########.fr       */
+/*   Updated: 2024/09/26 13:41:23 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ ScavTrap::ScavTrap()
 	std::cout << "Default ScavTrap " << this->_name << " constructed!" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	this->_name = name;
 	this->Hitp = 100;

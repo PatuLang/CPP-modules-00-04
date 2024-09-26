@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 16:29:41 by plang             #+#    #+#             */
-/*   Updated: 2024/09/25 17:53:51 by plang            ###   ########.fr       */
+/*   Updated: 2024/09/26 13:41:50 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ FragTrap::FragTrap()
 	std::cout << "Default FragTrap " << this->_name << " constructed!" << std::endl;
 }
 
-FragTrap::FragTrap(std::string name)
+FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
 	this->_name = name;
 	this->Hitp = 100;
