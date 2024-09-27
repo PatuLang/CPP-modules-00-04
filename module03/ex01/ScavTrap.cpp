@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 14:22:54 by plang             #+#    #+#             */
-/*   Updated: 2024/09/25 16:15:53 by plang            ###   ########.fr       */
+/*   Updated: 2024/09/26 14:34:25 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 
 ScavTrap::ScavTrap()
 {
-	this->_name = "stranger";
+	this->_name = "scaver";
 	this->Hitp = 100;
 	this->Energyp = 50;
 	this->Attackdmg = 20;
 	std::cout << "Default ScavTrap " << this->_name << " constructed!" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	this->_name = name;
 	this->Hitp = 100;
@@ -73,7 +73,7 @@ void	ScavTrap::attack(const std::string &target)
 			std::cout << "ScavTrap " << this->_name << " is out of energy points" << std::endl;
 			return ;
 		}
-		std::cout << "ScavTrap " << this->_name << " attacks, " << target << " causing " << this->Attackdmg << " points of damage" << std::endl;
+		std::cout << "ScavTrap " << this->_name << " attacks " << target << ", causing " << this->Attackdmg << " points of damage" << std::endl;
 		this->Energyp--;
 		std::cout << "ScavTrap " << this->_name << " is now on " << this->Energyp << " energy point" << std::endl;
 		return ;
