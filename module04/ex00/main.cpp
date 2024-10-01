@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 15:31:25 by plang             #+#    #+#             */
-/*   Updated: 2024/09/30 17:14:23 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/01 11:52:21 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,39 @@
 
 int main()
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const WrongAnimal* i = new WrongCat();
+	Animal cow;
+	std::cout << cow.getType() << std::endl;
+	cow.makeSound();
+	const Animal* ko = new Animal;
+	std::cout << ko->getType() << std::endl;
+	ko->makeSound();
 
-	// Animal meta;
-	// Dog	dog;
-	// Animal *rotta = &dog;
+	std::cout << std::endl;
 
-	// rotta->makeSound();
-	std::cout << meta->getType() << " " << std::endl;
-	// std::cout << meta.getType() << std::endl;
-	// meta.makeSound();
-	// std::cout << dog.getType() << std::endl;
-	// dog.makeSound();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
+	Animal* hund = new Dog();
+	std::cout << hund->getType() << std::endl;
+	hund->makeSound();
+	const Animal* knine = new Dog();
+	std::cout << knine->getType() << std::endl;
+	knine->makeSound();
 
-	delete i;
-	delete j;
-	delete meta;
-	return 0;
+	std::cout << std::endl;
+
+	Animal* katt = new Cat();
+	std::cout << katt->getType() << std::endl;
+	katt->makeSound();
+
+	std::cout << std::endl;
+
+	const WrongAnimal* blob = new WrongCat();
+	std::cout << blob->getType() << std::endl;
+	blob->makeSound();
+
+	std::cout << std::endl;
+
+	delete blob;
+	delete katt;
+	delete knine;
+	delete hund;
+	delete ko;
 }
