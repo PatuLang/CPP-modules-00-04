@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 15:31:25 by plang             #+#    #+#             */
-/*   Updated: 2024/10/01 15:03:56 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/02 15:53:24 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,34 +16,67 @@
 
 int main()
 {
-	Animal cow;
+	const Animal cow;
 	std::cout << cow.getType() << std::endl;
 	cow.makeSound();
-	const Animal* ko = new Animal;
-	std::cout << ko->getType() << std::endl;
-	ko->makeSound();
+	const Animal* kow = new Animal();
+	std::cout << kow->getType() << std::endl;
+	kow->makeSound();
 
 	std::cout << std::endl;
 
-	Animal* hund = new Dog();
-	std::cout << hund->getType() << std::endl;
-	hund->makeSound();
 	const Animal* knine = new Dog();
 	std::cout << knine->getType() << std::endl;
 	knine->makeSound();
 
 	std::cout << std::endl;
 
-	Animal* katt = new Cat();
-	std::cout << katt->getType() << std::endl;
-	katt->makeSound();
+	const Animal* cat = new Cat();
+	std::cout << cat->getType() << std::endl;
+	cat->makeSound();
 
 	std::cout << std::endl;
+
+	delete cat;
+	delete knine;
+	delete kow;
 
 	std::cout << std::endl;
 	
-	delete katt;
-	delete knine;
-	delete hund;
-	delete ko;
+	Animal* array[4];
+	for (int i = 0; i <= 1; i++)
+		array[i] = new Dog();
+
+	std::cout << std::endl;
+
+	for (int i = 2; i <= 3; i++)
+		array[i] = new Cat();
+
+	std::cout << std::endl;
+
+	for (int i = 0; i < 4; i++)
+		array[i]->makeSound();
+
+	std::cout << std::endl;
+
+	for (int i = 0; i < 4; i++)
+		delete array[i];
+
+	std::cout << std::endl;
+
+	Cat cat1;
+	cat1.setIdeas("lessgoo", 0);
+	Cat cat2(cat1);
+	std::cout << cat2.getIdeas(0) << std::endl;
+	std::cout << "CAT 1 IDEA -------------\n";
+	cat2.setIdeas("paviaani", 1);
+	std::cout << cat1.getIdeas(1) << std::endl;
+	std::cout << cat2.getIdeas(1) << std::endl;
+	std::cout << std::endl;
+
+	Dog	dog1;
+	Dog	dog2;
+	dog2 = dog1;
+
+	std::cout << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 14:34:31 by plang             #+#    #+#             */
-/*   Updated: 2024/09/30 15:39:51 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/02 13:39:53 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ Animal::Animal(const Animal& other)
 
 Animal& Animal::operator=(const Animal& other)
 {
+	std::cout << "Copy assignment operator called\n";
 	if (this != &other)
 	{
 		this->type = other.type;
 	}
 	return *this;
-	std::cout << "Copy assignment operator called\n";
 }
 
 Animal::~Animal()
