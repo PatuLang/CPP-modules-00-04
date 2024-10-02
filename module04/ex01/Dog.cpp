@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 14:56:16 by plang             #+#    #+#             */
-/*   Updated: 2024/10/01 15:42:39 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/02 15:56:14 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,8 @@ Dog::Dog()
 
 Dog::Dog(const Dog& other) : Animal(other)
 {
-	this->type = other.type;
 	std::cout << "Dog copy constructor called\n";
-	this->_Brain = new Brain();
+	this->_Brain = new Brain(*other._Brain);
 }
 
 Dog& Dog::operator=(const Dog& other)
@@ -32,6 +31,8 @@ Dog& Dog::operator=(const Dog& other)
 	if (this != &other)
 	{
 		this->type = other.type;
+		delete this->_Brain;
+		this->_Brain = new Brain(*other._Brain);
 	}
 	return *this;
 }
@@ -39,7 +40,6 @@ Dog& Dog::operator=(const Dog& other)
 Dog::~Dog()
 {
 	delete this->_Brain;
-	std::cout << "Brain ejected\n";
 	std::cout << "Dog destructor called\n";
 }
 
@@ -51,4 +51,14 @@ void	Dog::makeSound(void) const
 std::string Dog::getType(void) const
 {
 	return this->type;
+}
+
+void	Dog::setIdeas(std::string newIdea, unsigned int i)
+{
+	this->_Brain->setIdeas(newIdea, i);
+}
+
+std::string	Dog::getIdeas(unsigned int i)
+{
+	return this->_Brain->getIdeas(i);
 }

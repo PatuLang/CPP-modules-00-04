@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 14:56:29 by plang             #+#    #+#             */
-/*   Updated: 2024/10/01 13:22:36 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/02 15:56:33 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ class Dog : public Animal
 
 		void		makeSound(void) const;
 		std::string	getType() const;
+		void		setIdeas(std::string, unsigned int);
+		std::string	getIdeas(unsigned int i);
 };
 
 #endif

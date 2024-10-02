@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 14:56:25 by plang             #+#    #+#             */
-/*   Updated: 2024/10/01 13:45:17 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/02 15:35:57 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ class Cat : public Animal
 
 		void		makeSound(void) const;
 		std::string	getType() const;
+		void		setIdeas(std::string, unsigned int);
+		std::string	getIdeas(unsigned int i);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 14:56:20 by plang             #+#    #+#             */
-/*   Updated: 2024/10/01 15:57:19 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/02 15:39:49 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ Cat::Cat()
 
 Cat::Cat(const Cat& other) : Animal(other)
 {
-	this->_Brain = new Brain();
 	std::cout << "Cat copy constructor called\n";
+	this->_Brain = new Brain(*other._Brain);
 }
 
 Cat& Cat::operator=(const Cat& other)
@@ -40,7 +40,6 @@ Cat& Cat::operator=(const Cat& other)
 Cat::~Cat()
 {
 	delete this->_Brain;
-	std::cout << "Brain ejected\n";
 	std::cout << "Cat destructor called\n";
 }
 
@@ -52,4 +51,14 @@ void	Cat::makeSound(void) const
 std::string Cat::getType(void) const
 {
 	return this->type;
+}
+
+void	Cat::setIdeas(std::string newIdea, unsigned int i)
+{
+	this->_Brain->setIdeas(newIdea, i);
+}
+
+std::string	Cat::getIdeas(unsigned int i)
+{
+	return this->_Brain->getIdeas(i);
 }
