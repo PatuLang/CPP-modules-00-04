@@ -6,7 +6,7 @@
 #    By: plang <plang@student.hive.fi>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/30 14:04:53 by plang             #+#    #+#              #
-#    Updated: 2024/10/02 15:47:32 by plang            ###   ########.fr        #
+#    Updated: 2024/10/02 16:03:26 by plang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = Pets
 
 CXX = c++
 
-CXXFLAGS = -Werror -Wall -Wextra -g
+CXXFLAGS = -Werror -Wall -Wextra
 
 SRCS = main.cpp \
 		Animal.cpp \

@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 15:31:25 by plang             #+#    #+#             */
-/*   Updated: 2024/10/02 15:53:24 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/02 16:02:49 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,11 +72,18 @@ int main()
 	cat2.setIdeas("paviaani", 1);
 	std::cout << cat1.getIdeas(1) << std::endl;
 	std::cout << cat2.getIdeas(1) << std::endl;
+	
 	std::cout << std::endl;
 
 	Dog	dog1;
+	dog1.setIdeas("dawg", 0);
 	Dog	dog2;
 	dog2 = dog1;
+	std::cout << dog2.getIdeas(0) << std::endl;
+	std::cout << "DOG 1 IDEA -------------\n";
+	dog2.setIdeas("paviaani", 1);
+	std::cout << dog1.getIdeas(1) << std::endl;
+	std::cout << dog2.getIdeas(1) << std::endl;
 
 	std::cout << std::endl;
 }
