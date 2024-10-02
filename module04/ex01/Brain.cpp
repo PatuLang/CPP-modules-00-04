@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:07:10 by plang             #+#    #+#             */
-/*   Updated: 2024/10/01 14:44:14 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/02 14:08:24 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ Brain::Brain(const Brain &other)
 
 Brain& Brain::operator=(const Brain &other)
 {
+	std::cout << "Brain copy assignment operator called\n";
 	if (this != &other)
 	{
 		for (int i = 0; i < 100; i++)
@@ -36,4 +37,14 @@ Brain& Brain::operator=(const Brain &other)
 Brain::~Brain()
 {
 	std::cout << "Brain destructor called\n";
+}
+
+void	Brain::setIdeas(std::string newIdea, unsigned int i)
+{
+	this->ideas[i] = newIdea;
+}
+
+std::string	Brain::getIdeas(unsigned int i)
+{
+	return this->ideas[i];
 }
