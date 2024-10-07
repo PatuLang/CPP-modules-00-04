@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:07:10 by plang             #+#    #+#             */
-/*   Updated: 2024/10/02 14:08:24 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/07 13:01:56 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,19 @@ Brain::~Brain()
 
 void	Brain::setIdeas(std::string newIdea, unsigned int i)
 {
+	if (i > 99)
+	{
+		std::cout << "Only 100 idea slots available\n";
+		return ;
+	}
 	this->ideas[i] = newIdea;
 }
 
 std::string	Brain::getIdeas(unsigned int i)
 {
+	if (i > 99)
+	{
+		return "Only 100 idea slots available\n";
+	}
 	return this->ideas[i];
 }

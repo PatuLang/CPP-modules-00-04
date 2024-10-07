@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 14:56:20 by plang             #+#    #+#             */
-/*   Updated: 2024/10/02 15:39:49 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/07 13:01:56 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,19 @@ std::string Cat::getType(void) const
 
 void	Cat::setIdeas(std::string newIdea, unsigned int i)
 {
+	if (i > 99)
+	{
+		std::cout << "Only 100 idea slots available\n";
+		return ;
+	}
 	this->_Brain->setIdeas(newIdea, i);
 }
 
 std::string	Cat::getIdeas(unsigned int i)
 {
+	if (i > 99)
+	{
+		return "Only 100 idea slots available\n";
+	}
 	return this->_Brain->getIdeas(i);
 }
