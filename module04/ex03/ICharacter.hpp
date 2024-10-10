@@ -6,9 +6,12 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 15:26:53 by plang             #+#    #+#             */
-/*   Updated: 2024/10/09 16:02:11 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/10 16:25:35 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef ICHARACTER_HPP
+# define ICHARACTER_HPP
 
 class ICharacter
 {
@@ -20,3 +23,5 @@ class ICharacter
 		virtual void 				unequip(int idx) = 0;
 		virtual void 				use(int idx, ICharacter& target) = 0;
 };
+
+#endif
