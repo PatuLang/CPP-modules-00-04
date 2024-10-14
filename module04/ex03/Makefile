@@ -6,17 +6,22 @@
 #    By: plang <plang@student.hive.fi>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/09 09:51:51 by plang             #+#    #+#              #
-#    Updated: 2024/10/09 09:52:29 by plang            ###   ########.fr        #
+#    Updated: 2024/10/14 15:38:30 by plang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = 
+NAME = Gandalf
 
 CXX = c++
 
 CXXFLAGS = -Werror -Wall -Wextra
 
 SRCS = main.cpp \
+		AMateria.cpp \
+		Character.cpp \
+		Cure.cpp \
+		Ice.cpp \
+		MateriaSource.cpp
 
 OBJS =	$(SRCS:.cpp=.o)
 

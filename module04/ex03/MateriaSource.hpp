@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 15:28:39 by plang             #+#    #+#             */
-/*   Updated: 2024/10/10 16:06:45 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/14 14:01:56 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@
 # include "AMateria.hpp"
 # include "IMateriaSource.hpp"
 
+// class AMateria;
+
 class MateriaSource : public IMateriaSource
 {
 	private:
-		std::string slots[4];
+		AMateria* inventory[4];
 	public:
 		MateriaSource();
 		MateriaSource(const MateriaSource&);

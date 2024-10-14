@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 16:06:08 by plang             #+#    #+#             */
-/*   Updated: 2024/10/10 16:26:58 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/14 15:38:43 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ AMateria::AMateria()
 	std::cout << "AMateria constructor\n";
 }
 
-AMateria::AMateria(std::string const &type)
+AMateria::AMateria(std::string const &type) : _type(type)
 {
 	std::cout << "AMateria type constructor\n";
 }
@@ -25,11 +25,15 @@ AMateria::AMateria(std::string const &type)
 AMateria::AMateria(const AMateria &other)
 {
 	std::cout << "AMateria copy constructor\n";
+	this->_type = other._type;
 }
 
 AMateria& AMateria::operator=(const AMateria &other)
 {
 	std::cout << "AMateria copy assignment\n";
+	if (this != &other)
+		this->_type = other._type;
+	return *this;
 }
 
 AMateria::~AMateria()
@@ -39,10 +43,10 @@ AMateria::~AMateria()
 
 std::string const& AMateria::getType() const
 {
-	return this->type;
+	return this->_type;
 }
 
-void	AMateria::use(ICharacter &target)
-{
+// void	AMateria::use(ICharacter &target)
+// {
 	
-}
+// }
