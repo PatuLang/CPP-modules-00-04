@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 09:52:34 by plang             #+#    #+#             */
-/*   Updated: 2024/10/14 15:38:31 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/15 14:43:20 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ int main(void)
 	// me->equip(tmp);
 	// tmp = src->createMateria("cure");
 	// me->equip(tmp);
-	// ICharacter* bob = new Character("bob");
+	ICharacter* bob = new Character("bob");
 	// me->use(0, *bob);
 	// me->use(1, *bob);
-	// delete bob;
+	delete bob;
 	delete me;
 	delete src;
 	return 0;

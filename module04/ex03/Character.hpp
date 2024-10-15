@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 13:46:05 by plang             #+#    #+#             */
-/*   Updated: 2024/10/14 15:38:39 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/15 14:31:36 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Character : public ICharacter
 {
 	private:
-		std::string slots[4];
+		AMateria* 	eqt_materia[4];
 		std::string name;
 	public:
 		Character();

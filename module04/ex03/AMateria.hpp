@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 15:27:25 by plang             #+#    #+#             */
-/*   Updated: 2024/10/14 15:38:42 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/15 14:21:57 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class AMateria
 		AMateria();
 		AMateria(const AMateria&);
 		AMateria& operator=(const AMateria&);
-		~AMateria();
+		virtual ~AMateria();
 		AMateria(std::string const &type);
 		
 		std::string const& 	getType() const;

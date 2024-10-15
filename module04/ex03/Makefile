@@ -6,7 +6,7 @@
 #    By: plang <plang@student.hive.fi>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/09 09:51:51 by plang             #+#    #+#              #
-#    Updated: 2024/10/14 15:38:30 by plang            ###   ########.fr        #
+#    Updated: 2024/10/15 14:22:21 by plang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = Gandalf
 
 CXX = c++
 
-CXXFLAGS = -Werror -Wall -Wextra
+CXXFLAGS = -Werror -Wall -Wextra -g
 
 SRCS = main.cpp \
 		AMateria.cpp \

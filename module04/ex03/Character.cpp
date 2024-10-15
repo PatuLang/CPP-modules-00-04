@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 16:06:04 by plang             #+#    #+#             */
-/*   Updated: 2024/10/14 15:42:49 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/15 14:33:31 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,19 @@
 Character::Character()
 {
 	std::cout << "Character constructor\n";
+	for(int i = 0; i < 4; i++)
+	{
+		this->eqt_materia[i] = nullptr;
+	}
 }
 
 Character::Character(std::string _name) : name(_name)
 {
 	std::cout << "Character name constructor\n";
+	for(int i = 0; i < 4; i++)
+	{
+		this->eqt_materia[i] = nullptr;
+	}
 }
 
 Character::Character(const Character &other)
@@ -27,7 +35,7 @@ Character::Character(const Character &other)
 	std::cout << "Character copy constructor\n";
 	this->name = other.name;
 	for(int i = 0; i < 4; i++)
-		this->slots[i] = other.slots[i];
+		this->eqt_materia[i] = other.eqt_materia[i];
 }
 
 Character& Character::operator=(const Character &other)
@@ -37,7 +45,7 @@ Character& Character::operator=(const Character &other)
 	{
 		this->name = other.name;
 		for(int i = 0; i < 4; i++)
-			this->slots[i] = other.slots[i];
+			this->eqt_materia[i] = other.eqt_materia[i];
 	}
 	return *this;
 }
