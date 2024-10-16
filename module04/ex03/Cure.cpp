@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 16:06:01 by plang             #+#    #+#             */
-/*   Updated: 2024/10/14 15:38:38 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/16 14:53:09 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ AMateria* Cure::clone() const
 	return new Cure();
 }
 
-// void	Cure::use(ICharacter &target)
-// {
-	
-// }
+void	Cure::use(ICharacter &target)
+{
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+}

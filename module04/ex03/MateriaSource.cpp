@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 16:06:13 by plang             #+#    #+#             */
-/*   Updated: 2024/10/15 14:42:57 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/16 12:31:30 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	MateriaSource::learnMateria(AMateria *other)
 		return ;
 	for(int i = 0; i < 4; i++)
 	{
-		if (!this->inventory[i])
+		if (this->inventory[i] == nullptr)
 		{
 			this->inventory[i] = other;
 			return ;
@@ -79,8 +79,9 @@ AMateria*	MateriaSource::createMateria(std::string const &type)
 {
 	for(int i = 0; i < 4; i++)
 	{
-		if (inventory[i]->getType() == type)
-			return inventory[i]->clone();
+		if (inventory[i] != nullptr)
+			if (inventory[i]->getType() == type)
+				return inventory[i]->clone();
 	}
 	std::cout << "Inventory doesn't have " << type << " as materia\n";
 	return nullptr;

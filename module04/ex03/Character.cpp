@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 16:06:04 by plang             #+#    #+#             */
-/*   Updated: 2024/10/15 14:33:31 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/16 17:11:12 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,12 @@ Character::Character(const Character &other)
 	std::cout << "Character copy constructor\n";
 	this->name = other.name;
 	for(int i = 0; i < 4; i++)
-		this->eqt_materia[i] = other.eqt_materia[i];
+	{
+		if (other.eqt_materia[i] != nullptr)
+			this->eqt_materia[i] = other.eqt_materia[i]->clone();
+		else
+			this->eqt_materia[i] = nullptr;
+	}
 }
 
 Character& Character::operator=(const Character &other)
@@ -45,7 +50,15 @@ Character& Character::operator=(const Character &other)
 	{
 		this->name = other.name;
 		for(int i = 0; i < 4; i++)
-			this->eqt_materia[i] = other.eqt_materia[i];
+		{
+			if (other.eqt_materia[i] != nullptr)
+			{
+				delete this->eqt_materia[i];
+				this->eqt_materia[i] = other.eqt_materia[i]->clone();
+			}
+			else
+				this->eqt_materia[i] = nullptr;
+		}
 	}
 	return *this;
 }
@@ -53,10 +66,10 @@ Character& Character::operator=(const Character &other)
 Character::~Character()
 {
 	std::cout << "Character destructor\n";
-	// for (int i = 0; i < 4; i++)
-	// {
-	// 	delete this->slots[i];
-	// }
+	for (int i = 0; i < 4; i++)
+	{
+		delete this->eqt_materia[i];
+	}
 }
 
 std::string const& Character::getName() const
@@ -64,17 +77,35 @@ std::string const& Character::getName() const
 	return this->name;
 }
 
-// void	Character::equip(AMateria* m)
-// {
-
-// }
+void	Character::equip(AMateria* m)
+{
+	for(int i = 0; i < 4; i++)
+	{
+		if (this->eqt_materia[i] == nullptr)
+		{
+			this->eqt_materia[i] = m;
+			return;
+		}
+	}
+}
 
 // void	Character::unequip(int idx)
 // {
-
-// }
-
-// void	Character::use(int idx, ICharacter &target)
-// {
 	
 // }
+
+void	Character::use(int idx, ICharacter &target)
+{
+	if (idx > 3 || idx < 0)
+	{
+		std::cout << "* slot " << idx << " doesn't exist, select from slots 0,1,2,3 *\n";
+		return ;
+	}
+	if (this->eqt_materia[idx] != nullptr)
+	{
+		this->eqt_materia[idx]->use(target);
+		return ;
+	}
+	std::cout << "* No match found in " << idx << " *\n";
+
+}

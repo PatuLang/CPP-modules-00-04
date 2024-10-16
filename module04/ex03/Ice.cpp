@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 16:05:57 by plang             #+#    #+#             */
-/*   Updated: 2024/10/14 15:38:36 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/16 14:57:42 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ AMateria* Ice::clone() const
 	return new Ice();
 }
 
-// void	Ice::use(ICharacter &target)
-// {
-	
-// }
+void	Ice::use(ICharacter &target)
+{
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+}

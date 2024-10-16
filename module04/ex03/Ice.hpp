@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 16:03:50 by plang             #+#    #+#             */
-/*   Updated: 2024/10/14 15:38:34 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/16 15:02:22 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Ice : public AMateria
 
 		std::string const& 	getType() const;
 		AMateria* 			clone() const override;
-		// void 				use(ICharacter& target) override;
+		void 				use(ICharacter& target) override;
 };
 
 #endif

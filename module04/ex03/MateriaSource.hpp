@@ -6,17 +6,17 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 15:28:39 by plang             #+#    #+#             */
-/*   Updated: 2024/10/14 14:01:56 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/16 14:54:55 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MATERIASOURCE_HPP
 # define MATERIASOURCE_HPP
 
-# include "AMateria.hpp"
 # include "IMateriaSource.hpp"
+# include "AMateria.hpp"
 
-// class AMateria;
+class AMateria;
 
 class MateriaSource : public IMateriaSource
 {

@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 16:03:13 by plang             #+#    #+#             */
-/*   Updated: 2024/10/14 15:38:37 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/16 15:02:16 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Cure : public AMateria
 
 		std::string const& 	getType() const;
 		AMateria* 			clone() const override;
-		// void 				use(ICharacter& target) override;
+		void 				use(ICharacter& target) override;
 };
 
 #endif

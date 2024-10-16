@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 13:46:05 by plang             #+#    #+#             */
-/*   Updated: 2024/10/15 14:31:36 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/16 15:25:44 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 # define CHARACTER_HPP
 
 # include "ICharacter.hpp"
-// # include "AMateria.hpp"
+# include "AMateria.hpp"
+
+class AMateria;
 
 class Character : public ICharacter
 {
@@ -28,10 +30,10 @@ class Character : public ICharacter
 		Character& operator=(const Character&);
 		~Character();
 
-		std::string const&	getName() const;
-		// void 				equip(AMateria* m);
+		std::string const&	getName() const override;
+		void 				equip(AMateria* m) override;
 		// void 				unequip(int idx);
-		// void 				use(int idx, ICharacter& target);
+		void 				use(int idx, ICharacter& target) override;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 16:06:08 by plang             #+#    #+#             */
-/*   Updated: 2024/10/14 15:38:43 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/16 15:16:45 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ std::string const& AMateria::getType() const
 	return this->_type;
 }
 
-// void	AMateria::use(ICharacter &target)
-// {
-	
-// }
+void	AMateria::use(ICharacter&)
+{
+}
