@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 13:46:05 by plang             #+#    #+#             */
-/*   Updated: 2024/10/16 15:25:44 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/17 15:43:23 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 
 # include "ICharacter.hpp"
 # include "AMateria.hpp"
+# include "Floor.hpp"
 
 class AMateria;
 
-class Character : public ICharacter
+class Character : public ICharacter, public Floor
 {
 	private:
 		AMateria* 	eqt_materia[4];
@@ -32,7 +33,7 @@ class Character : public ICharacter
 
 		std::string const&	getName() const override;
 		void 				equip(AMateria* m) override;
-		// void 				unequip(int idx);
+		void 				unequip(int idx) override;
 		void 				use(int idx, ICharacter& target) override;
 };
 

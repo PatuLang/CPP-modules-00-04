@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 16:06:13 by plang             #+#    #+#             */
-/*   Updated: 2024/10/16 12:31:30 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/17 15:24:47 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	MateriaSource::learnMateria(AMateria *other)
 		}
 	}
 	std::cout << "No room for " << other->getType() << ", inventory is full\n";
-	// delete other; // check if we delete thsi in the main
+	delete other;
 }
 
 AMateria*	MateriaSource::createMateria(std::string const &type)

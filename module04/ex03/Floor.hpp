@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   Floor.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 15:26:53 by plang             #+#    #+#             */
-/*   Updated: 2024/10/17 11:54:07 by plang            ###   ########.fr       */
+/*   Created: 2024/10/17 11:15:28 by plang             #+#    #+#             */
+/*   Updated: 2024/10/17 11:44:21 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICHARACTER_HPP
-# define ICHARACTER_HPP
+#ifndef FLOOR_HPP
+# define FLOOR_HPP
 
-# include <string>
-# include <iostream>
+# include "AMateria.hpp"
 
-class AMateria;
-
-class ICharacter
+struct Node
 {
-	public:
-		virtual ~ICharacter() {}
-		
-		virtual std::string const&	getName() const = 0;
-		virtual void 				equip(AMateria* m) = 0;
-		virtual void 				unequip(int idx) = 0;
-		virtual void 				use(int idx, ICharacter& target) = 0;
+	AMateria* m;
+	Node* next;
 };
+
+class Floor
+{
+	private:
+		Node* head;
+	public:
+		Floor();
+		Floor(const Floor&);
+		Floor& operator=(const Floor&);
+		~Floor();
+
+		void	addToEnd(AMateria *m);
+		void	deleteFloor();
+};
+
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 16:06:04 by plang             #+#    #+#             */
-/*   Updated: 2024/10/16 17:11:12 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/17 16:13:11 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ Character::~Character()
 	{
 		delete this->eqt_materia[i];
 	}
+	Floor::deleteFloor();
 }
 
 std::string const& Character::getName() const
@@ -87,12 +88,27 @@ void	Character::equip(AMateria* m)
 			return;
 		}
 	}
+	std::cout << "Equiped materia invetory is full, inventory contains:\n";
+	for (int i = 0; i < 4; i++)
+		std::cout << "Slot " << i << ": " << this->eqt_materia[i]->getType() << " ";
+	std::cout << std::endl;
 }
 
-// void	Character::unequip(int idx)
-// {
-	
-// }
+void	Character::unequip(int idx)
+{
+	if (idx > 3 || idx < 0)
+	{
+		std::cout << "* slot " << idx << " doesn't exist, select from slots 0,1,2,3 *\n";
+		return ;
+	}
+	if (this->eqt_materia[idx] != nullptr)
+	{
+		this->addToEnd(eqt_materia[idx]);
+		this->eqt_materia[idx] = nullptr;
+		return ;
+	}
+	std::cout << "* No match found in " << idx << " *\n";
+}
 
 void	Character::use(int idx, ICharacter &target)
 {

@@ -6,7 +6,7 @@
 #    By: plang <plang@student.hive.fi>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/09 09:51:51 by plang             #+#    #+#              #
-#    Updated: 2024/10/15 14:22:21 by plang            ###   ########.fr        #
+#    Updated: 2024/10/17 13:30:49 by plang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ SRCS = main.cpp \
 		Character.cpp \
 		Cure.cpp \
 		Ice.cpp \
-		MateriaSource.cpp
+		MateriaSource.cpp \
+		Floor.cpp
 
 OBJS =	$(SRCS:.cpp=.o)
 
