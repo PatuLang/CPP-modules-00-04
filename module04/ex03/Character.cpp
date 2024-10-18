@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 16:06:04 by plang             #+#    #+#             */
-/*   Updated: 2024/10/17 16:13:11 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/18 16:01:16 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,11 +80,31 @@ std::string const& Character::getName() const
 
 void	Character::equip(AMateria* m)
 {
+	if (m == nullptr)
+	{
+		std::cout << "Can't equip unlearned/uncreated materia\n";
+		return;
+	}
+	// if (m->getHolder() == nullptr)
+	// {
+	// 	std::cout << "AMateria signed to " << this->name << "\n";
+	// 	std::cout << m->getHolder() << "\n";
+	// }
+	// else if (this == m->getHolder())
+	// {
+	// 	std::cout << "This AMateria belongs to you: " << this->name << "\n";
+	// }
+	// else
+	// {
+	// 	std::cout << "This AMateria doesn't belong to " << this->name << "\n";
+	// 	return ;
+	// }
 	for(int i = 0; i < 4; i++)
 	{
 		if (this->eqt_materia[i] == nullptr)
 		{
 			this->eqt_materia[i] = m;
+			m->setHolder(this);
 			return;
 		}
 	}
@@ -92,6 +112,7 @@ void	Character::equip(AMateria* m)
 	for (int i = 0; i < 4; i++)
 		std::cout << "Slot " << i << ": " << this->eqt_materia[i]->getType() << " ";
 	std::cout << std::endl;
+	this->addToEnd(m);
 }
 
 void	Character::unequip(int idx)
