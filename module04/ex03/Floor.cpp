@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 11:15:32 by plang             #+#    #+#             */
-/*   Updated: 2024/10/18 15:28:53 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/21 16:37:09 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,23 +44,34 @@ void	Floor::addToEnd(AMateria *materia)
 	Node* newNode = new Node;
 	newNode->m = materia;
 	newNode->next = nullptr;
-	if (this->head == nullptr)
+	if (head == nullptr)
 	{
 		head = newNode;
 		return ;
 	}
 	Node *tmp = head;
-	while (tmp->next)
+	while (tmp->next != nullptr)
 	{
-		if (newNode->m == tmp->m)
-		{
-			delete newNode->m;
-			delete newNode;
-			break ;
-		}
 		tmp = tmp->next;
 	}
 	tmp->next = newNode;
+}
+
+bool	Floor::checkFloor(AMateria *materia)
+{
+	Node *tmp = head;
+	if (head != nullptr)
+	{
+		while (tmp->next != nullptr)
+		{
+			if (tmp->m == materia)
+				return true;
+			tmp = tmp->next;
+		}
+		if (tmp->m == materia)
+			return true;
+	}
+	return false;
 }
 
 void	Floor::deleteFloor()
@@ -69,14 +80,17 @@ void	Floor::deleteFloor()
 	Node *prev = head;
 	if (head != nullptr)
 	{
-		while (curr->next)
+		while (curr->next != nullptr)
 		{
 			curr = curr->next;
-			delete prev->m;
+			if (prev->m != nullptr)
+				delete prev->m;
+			prev->m = nullptr;
 			delete prev;
 			prev = curr;
 		}
-		delete prev->m;
+		if (prev->m)
+			delete prev->m;
 		delete prev;
 		head = nullptr;
 	}

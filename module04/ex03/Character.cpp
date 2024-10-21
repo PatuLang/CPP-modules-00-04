@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 16:06:04 by plang             #+#    #+#             */
-/*   Updated: 2024/10/18 16:01:16 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/21 16:36:57 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,11 @@ Character::~Character()
 	std::cout << "Character destructor\n";
 	for (int i = 0; i < 4; i++)
 	{
-		delete this->eqt_materia[i];
+		if (this->eqt_materia[i] != nullptr)
+		{
+			delete this->eqt_materia[i];
+			this->eqt_materia[i] = nullptr;
+		}
 	}
 	Floor::deleteFloor();
 }
@@ -85,20 +89,19 @@ void	Character::equip(AMateria* m)
 		std::cout << "Can't equip unlearned/uncreated materia\n";
 		return;
 	}
-	// if (m->getHolder() == nullptr)
-	// {
-	// 	std::cout << "AMateria signed to " << this->name << "\n";
-	// 	std::cout << m->getHolder() << "\n";
-	// }
-	// else if (this == m->getHolder())
-	// {
-	// 	std::cout << "This AMateria belongs to you: " << this->name << "\n";
-	// }
-	// else
-	// {
-	// 	std::cout << "This AMateria doesn't belong to " << this->name << "\n";
-	// 	return ;
-	// }
+	if (this->checkFloor(m) == true)
+	{
+		std::cout << "This materia is on the floor\n";
+		return;
+	}
+	for(int i = 0; i < 4; i++)
+	{
+		if (this->eqt_materia[i] == m || m->getHolder() != nullptr)
+		{
+			std::cout << "This materia is already equipped\n";
+			return ;
+		}
+	}
 	for(int i = 0; i < 4; i++)
 	{
 		if (this->eqt_materia[i] == nullptr)
@@ -108,7 +111,7 @@ void	Character::equip(AMateria* m)
 			return;
 		}
 	}
-	std::cout << "Equiped materia invetory is full, inventory contains:\n";
+	std::cout << "Equipped materia invetory is full, inventory contains:\n";
 	for (int i = 0; i < 4; i++)
 		std::cout << "Slot " << i << ": " << this->eqt_materia[i]->getType() << " ";
 	std::cout << std::endl;
@@ -124,6 +127,7 @@ void	Character::unequip(int idx)
 	}
 	if (this->eqt_materia[idx] != nullptr)
 	{
+		std::cout << eqt_materia[idx]->getType() << " unequiped\n";
 		this->addToEnd(eqt_materia[idx]);
 		this->eqt_materia[idx] = nullptr;
 		return ;

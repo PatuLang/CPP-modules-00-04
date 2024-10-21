@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 11:15:28 by plang             #+#    #+#             */
-/*   Updated: 2024/10/17 11:44:21 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/21 16:37:14 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ class Floor
 		~Floor();
 
 		void	addToEnd(AMateria *m);
+		bool	checkFloor(AMateria *materia);
 		void	deleteFloor();
 };
-
 
 #endif

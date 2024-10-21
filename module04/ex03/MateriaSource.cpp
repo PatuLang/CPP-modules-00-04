@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 16:06:13 by plang             #+#    #+#             */
-/*   Updated: 2024/10/17 15:24:47 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/21 11:51:29 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,13 @@ MateriaSource::~MateriaSource()
 {
 	std::cout << "MateriaSource destructor\n";
 	for(int i = 0; i < 4; i++)
-		delete this->inventory[i];
+	{
+		if (this->inventory[i] != nullptr)
+		{
+			delete this->inventory[i];
+			this->inventory[i] = nullptr;
+		}
+	}
 }
 
 void	MateriaSource::learnMateria(AMateria *other)

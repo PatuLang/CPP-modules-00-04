@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 16:06:08 by plang             #+#    #+#             */
-/*   Updated: 2024/10/18 15:54:25 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/21 11:47:53 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,7 @@ void	AMateria::use(ICharacter&)
 
 void	AMateria::setHolder(ICharacter *other)
 {
-	// std::cout << other->getName() << " " << other << " is now the holder\n";
 	this->holder = other;
-	// std::cout << holder << "\n";
 }
 
 ICharacter*	AMateria::getHolder() const
