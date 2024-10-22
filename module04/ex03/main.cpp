@@ -6,7 +6,7 @@
 /*   By: plang <plang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 09:52:34 by plang             #+#    #+#             */
-/*   Updated: 2024/10/21 17:26:45 by plang            ###   ########.fr       */
+/*   Updated: 2024/10/22 12:00:09 by plang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,23 @@
 
 int main(void)
 {
-	// IMateriaSource* src = new MateriaSource();
-	// src->learnMateria(new Ice());
-	// src->learnMateria(new Cure());
-	// ICharacter* tom = new Character("tom");
-	// ICharacter* bob = new Character("bob");
+	// IMateriaSource* source = new MateriaSource();
+	// source->learnMateria(new Ice());
+	// source->learnMateria(new Cure());
+	// Character tommy("tommy");
+	// Character bobby(tommy);
+	// Character timmy("timmy");
 	// AMateria* one;
-	// one = src->createMateria("ice");
-	// tom->equip(one);
-	// one = src->createMateria("cure");
-	// tom->equip(one);
-	// tom->use(0, *bob);
-	// tom->use(1, *bob);
-	// tom->use(2, *bob);
-	// delete tom;
-	// delete bob;
-	// delete src;
+	// one = source->createMateria("ice");
+	// tommy.equip(one);
+	// one = source->createMateria("cure");
+	// tommy.equip(one);
+	// timmy = tommy;
+	// tommy.use(0, bobby);
+	// tommy.use(1, bobby);
+	// tommy.use(2, bobby);
+	
+	// delete source;
 
 	
 	IMateriaSource* src = new MateriaSource();
@@ -169,7 +170,7 @@ int main(void)
 	bob->equip(tmp2);
 	std::cout << std::endl;
 
-	tmp2 = src->createMateria("cure");
+	tmp2 = src->createMateria("fire");
 	std::cout << std::endl;
 
 	bob->equip(tmp2);
